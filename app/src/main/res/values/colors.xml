@@ -184,6 +184,7 @@
     <color name="transparent_white_percent_90">#E6ffffff</color>
     <color name="transparent_white_percent_95">#F2ffffff</color>
 
+    <color name="title_bar">#EDF1F1F2</color>
 
     <color name="gray_title">#2A2E33</color>
     <color name="gray_content">#23272B</color>
