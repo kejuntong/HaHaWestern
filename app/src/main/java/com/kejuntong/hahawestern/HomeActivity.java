@@ -1,15 +1,25 @@
 package com.kejuntong.hahawestern;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.kejuntong.hahawestern.ModelClasses.User;
+import com.kejuntong.hahawestern.UtilClasses.UtilMethods;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeActivity extends AppCompatActivity {
 
+    ImageButton menuButton;
+    SlidingMenu slidingMenu;
+
+    CircleImageView profileImage;
     Firebase fireBaseRef;
 
     @Override
@@ -28,17 +38,42 @@ public class HomeActivity extends AppCompatActivity {
 //            }
 //        });
 
+        setSlidingMenu();
 
-        SlidingMenu menu = new SlidingMenu(this);
-        menu.setMode(SlidingMenu.LEFT);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-//        menu.setShadowWidthRes(R.dimen.shadow_width);
-//        menu.setShadowDrawable(R.drawable.shadow);
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setMenu(R.layout.view_sliding_menu);
-
+        profileImage = (CircleImageView) findViewById(R.id.profile_image);
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomeActivity.this, CropImageActivity.class));
+            }
+        });
 
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        profileImage.setImageBitmap(UtilMethods.getBitmapFromMemory("test"));
+    }
+
+    private void setSlidingMenu(){
+        slidingMenu = new SlidingMenu(this);
+        slidingMenu.setMode(SlidingMenu.LEFT);
+        slidingMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        slidingMenu.setShadowWidthRes(R.dimen.shadow_width);
+        slidingMenu.setShadowDrawable(R.drawable.menu_shadow);
+        slidingMenu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+        slidingMenu.setFadeDegree(0.35f);
+        slidingMenu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        slidingMenu.setMenu(R.layout.view_sliding_menu);
+
+        menuButton = (ImageButton) findViewById(R.id.menu_button);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slidingMenu.toggle();
+            }
+        });
+    }
+
 }

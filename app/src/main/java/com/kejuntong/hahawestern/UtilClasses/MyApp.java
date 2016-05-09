@@ -10,7 +10,7 @@ import com.firebase.client.Firebase;
  */
 public class MyApp extends Application {
 
-    Context context;
+    static Context context;
 
     @Override
     public void onCreate() {
@@ -21,7 +21,7 @@ public class MyApp extends Application {
 
     }
 
-    public Context getContext(){
-        return this.context;
+    public static Context getContext(){
+        return context;
     }
 }

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">HahaWestern</string>
+
+    <string name="home">主页</string>
+    <string name="carpool">搭车</string>
+    <string name="zufang">租房</string>
+    <string name="ershouhuo">二手货</string>
+    <string name="jiaoyou">交友</string>
+    <string name="setting">设置</string>
+    <string name="crop">剪裁</string>
+
 </resources>

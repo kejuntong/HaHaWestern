@@ -2,13 +2,182 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    android:background="@color/darkgreen">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TEST"
-        android:layout_centerInParent="true"
-        android:textSize="20dp"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/placeholder_user_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+    
+    <RelativeLayout
+        android:id="@+id/row_home"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginTop="20dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_home"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/row_carpool"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/row_home"
+        android:layout_marginTop="1dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/carpool"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_carpool"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_home"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/row_zufang"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/row_carpool"
+        android:layout_marginTop="1dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zufang"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_zufang"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/row_ershouhuo"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/row_zufang"
+        android:layout_marginTop="1dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ershouhuo"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_ershouhuo"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/row_jiaoyou"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/row_ershouhuo"
+        android:layout_marginTop="1dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jiaoyou"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/row_jiaoyou"
+        android:background="@color/transparent_white_percent_20"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <RelativeLayout
+        android:id="@+id/row_setting"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@drawable/selectable_menu_row_background"
+        android:layout_below="@+id/row_jiaoyou"
+        android:layout_marginTop="1dp"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setting"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
