@@ -18,6 +18,8 @@ public class CropImageActivity extends Activity {
 
     CropImageView cropImageView;
 
+    final static int GALLERY_REQUEST = 1001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +27,7 @@ public class CropImageActivity extends Activity {
 
         Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
         galleryIntent.setType("image/*");
-        startActivityForResult(galleryIntent, 0);
+        startActivityForResult(galleryIntent, GALLERY_REQUEST);
 
     }
 
@@ -33,7 +35,7 @@ public class CropImageActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(data != null) {
+        if(requestCode == GALLERY_REQUEST && data != null) {
             findViewById(R.id.crop_layout).setVisibility(View.VISIBLE);
             cropImageView = (CropImageView) findViewById(R.id.image_to_crop);
             cropImageView.setCropShape(CropImageView.CropShape.RECTANGLE);
@@ -47,11 +49,14 @@ public class CropImageActivity extends Activity {
                 @Override
                 public void onClick(View view) {
                     final Bitmap croppedBitmap = cropImageView.getCroppedImage(500, 250);
-                    UtilMethods.saveBitmapToMemory(croppedBitmap, "test");
+                    UtilMethods.saveBitmapToMemory(croppedBitmap, "temp_img");
                     finish();
 
                 }
             });
+        } else {
+            finish();
         }
     }
+
 }

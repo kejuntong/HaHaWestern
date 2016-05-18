@@ -1,6 +1,8 @@
 package com.kejuntong.hahawestern;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import com.firebase.client.FirebaseError;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.kejuntong.hahawestern.ModelClasses.User;
 import com.kejuntong.hahawestern.UtilClasses.UtilMethods;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -53,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        profileImage.setImageBitmap(UtilMethods.getBitmapFromMemory("test"));
+        profileImage.setImageBitmap(UtilMethods.getBitmapFromMemory("temp_img"));
     }
 
     private void setSlidingMenu(){
